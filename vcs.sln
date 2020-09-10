@@ -1,0 +1,46 @@
+using System;
+
+namespace CinemaTDD
+{
+    public class CinemaPrice
+    {
+        public double GetTicketPrice(string ticketType, int timeOfDay)
+        {
+            if (ticketType == "child")
+            {
+                if (timeOfDay > 9 && timeOfDay < 25)
+                {
+                    return 12;
+                } else
+                {
+                    throw new Exception("Invalid time");
+                }
+            } else if (ticketType == "senior")
+            {
+                if (timeOfDay > 9 && timeOfDay < 25)
+                {
+                    return 12.5;
+                }
+                else
+                {
+                    throw new Exception("Invalid time");
+                }
+            } else if (ticketType == "adult")
+            {
+                if (timeOfDay > 16 && timeOfDay < 25)
+                {
+                    return 14.5;
+                } else if (timeOfDay > 8 && timeOfDay < 17)
+                {
+                    return 17.5;
+                } else
+                {
+                    throw new Exception("Invalid time");
+                }
+            } else
+            {
+                throw new Exception("Invalid ticket type");
+            }
+        }
+    }
+}
